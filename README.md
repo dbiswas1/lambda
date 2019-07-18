@@ -1,16 +1,37 @@
 # Integrate AWS Lambda, SQS and SNS - a AWS Serverless sample
 
+##  TOC
+- [Overview](#overview)
+- [Problem Statement](#problem-statement)
+- [What is Lambda ?](#what-is-lambda--)
+- [What is SQS ?](#what-is-sqs--)
+- [What is SNS ?](#what-is-sns--)
+- [Setup Details](#setup-details)
+  * [Prerequisite](#prerequisite)
+  * [Launch the Serverless stack](#launch-the-serverless-stack)
+  * [Screen Caps](#screen-caps)
+      - [Lambda Function](#lambda-function)
+      - [SNS Topic -> Click Publish Message](#sns-topic----click-publish-message)
+      - [SNS-Topic -> Sample Input](#sns-topic----sample-input)
+      - [SQS-Topic -> View output](#sqs-topic----view-output)
+- [Clean the setup](#clean-the-setup)
+  
 ## Overview
-This blog will show how to Process a request from SNS using AWS lambda and pass it for further processing via AQS SQS.
+This blog will show how to Process a request from SNS using AWS lambda and pass it for further processing via SQS.
 These integration can be typically used for infrastructure automation.
 
 1. Lets say you have an event captured in SNS from monitoring system and now want to take action against it. 
 2. Depending on the type of alert you will have lambda function to understand which Queue the request to be placed
-3. Jenkins job subscribed to the particular Queue will consume data and take appropriate option as defined in the job
+3. Jenkins job subscribed to the particular Queue will consume data and take appropriate action as defined in the job
 
 ## Problem Statement
-JSON blob (input) is to be published to an SNS topic, processed by a Lambda function, and then the output pushed into 
-an SQS queue.
+For this new setup, a JSON blob (input) is to be published to an SNS topic, processed by a Lambda function, and then the
+output pushed into an SQS queue.
+
+```
+Input: {“text”: “Hello World”, “amount”: 10}
+Expected Output: {“Result”: “ Hello World”}
+```
 
 ## What is Lambda ?
 AWS Lambda is a compute service that lets you run code without provisioning or managing servers. AWS Lambda executes your 
