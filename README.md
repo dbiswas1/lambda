@@ -11,9 +11,9 @@
   * [Launch the Serverless stack](#launch-the-serverless-stack)
   * [Screen Caps](#screen-caps)
       - [Lambda Function](#lambda-function)
-      - [SNS Topic -> Click Publish Message](#sns-topic----click-publish-message)
-      - [SNS-Topic -> Sample Input](#sns-topic----sample-input)
-      - [SQS-Topic -> View output](#sqs-topic----view-output)
+      - [SNS Topic -> Click Publish Message](#sns-topic---click-publish-message)
+      - [SNS-Topic -> Sample Input](#sns-topic---sample-input)
+      - [SQS-Topic -> View output](#sqs-topic---view-output)
 - [Clean the setup](#clean-the-setup)
   
 ## Overview
